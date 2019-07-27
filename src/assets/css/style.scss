@@ -1,0 +1,293 @@
+// imports
+@import './appfont';
+@import './bootstrap';
+@import './d983792548d0ad760971213e54d53962.scss';
+
+// global variables
+$primary-color: white;
+$main-font-color: black;
+$app-font: 'Gotham',
+sans-serif;
+
+// restaure dom tags
+body {
+    background-color: $primary-color;
+    color: $main-font-color;
+    font-family: $app-font;
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-modify: none;
+    -webkit-user-modify: none;
+}
+
+#app {
+    .header {
+        .img.extend {
+            display: block;
+            width: 200px;
+            height: 90px;
+            background: url('../img/logo.png') center no-repeat;
+            background-size: contain;
+            margin: auto;
+        }
+    }
+    
+    .keyboard {
+        .header {
+            margin: auto auto 20px auto;
+            padding: 0 20px;
+            text-align: center;
+            
+            h1 {
+                font-size: 1.4rem;
+                font-weight: 600;
+                margin: 0;
+            }
+        }
+
+        .inst-view {
+            display: block;
+            height: 280px;
+            width: 880px;
+            position: relative;
+            cursor: pointer;
+            border: solid 2px;
+            margin: auto;
+
+            &.active {
+                .key-name {
+                    opacity: 1;
+                    transform: scale(1);
+                    transform: translateY(0);
+                }
+            }
+
+            .key {
+                float: left;
+                width: 10%;
+                height: 100%;
+                display: block;
+                box-sizing: border-box;
+                border: solid 2px black;
+
+
+                .key-name {
+                    top: 234px;
+                }
+            }
+
+            .key-sharp {
+                display: block;
+                position: absolute;
+                width: 6%;
+                height: 60%;
+                background: #000;
+                color: white;
+                top: 0;
+                z-index: 3;
+                margin-top: 2px;
+                border-top: none;
+                border-bottom-right-radius: 10px;
+                border-bottom-left-radius: 10px;
+
+                .key-name {
+                    top: 133px;
+                }
+
+                &[key-id="2"] {
+                    left: 7%;
+                }
+
+                &[key-id="4"] {
+                    left: 17%;
+                }
+
+                &[key-id="7"] {
+                    left: 37%;
+                }
+
+                &[key-id="9"] {
+                    left: 47%;
+                }
+
+                &[key-id="11"] {
+                    left: 57%;
+                }
+
+                &[key-id="14"] {
+                    left: 77%;
+                }
+
+                &[key-id="16"] {
+                    left: 87%;
+                }
+            }
+
+            .key-name {
+                display: flex;
+                width: 100%;
+                position: relative;
+                font-size: 20px;
+                opacity: 0;
+                transform: scale(0);
+                transform: translateY(-10px);
+                transition: transform ease .4s,
+                    opacity ease .4s;
+
+                p {
+                    margin: auto;
+                    font-weight: 600;
+                }
+            }
+
+            .key,
+            .key-sharp {
+                transition: ease-out .2s background;
+
+                &.active {
+                    background: #007aff;
+
+                    &:not(.key-sharp) {
+                        p {
+                            color: white;
+                        }
+                    }
+
+                    &:not(.key) {
+                        border: solid 3px black;
+                        border-top: none;
+
+                        .key-name {
+                            color: white;
+                        }
+                    }
+
+                    &:hover {
+                        background: #007aff;
+                    }
+                }
+
+                p {
+                    transition: ease .2s transform;
+                }
+            }
+
+            .key:hover {
+                background: rgba(0, 0, 0, .2);
+            }
+
+            .key-sharp:hover {
+                background: #222;
+            }
+
+            .key:active,
+            .key-sharp:active {
+                p {
+                    transform: translateY(-5px)
+                }
+            }
+        }
+    }
+
+    .actions {
+        max-width: 880px;
+        margin: 10px auto auto auto;
+    }
+
+    .play-keys,
+    .remove-keys {
+        max-width: fit-content;
+        transition: linear all .1s;
+
+        &:active {
+            transform: scale(.95);
+        }
+
+        &:not(.remove-keys){
+            opacity: .4;
+            cursor: default;
+        }
+
+        &:not(.play-keys){
+            padding-right: 0;
+            cursor: pointer;
+        }
+
+        &.active {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        p {
+            margin: 0;
+            font-weight: 600;
+            font-size: 15px;
+        }   
+    }
+
+    .button-env {
+        display: flex;
+        margin-top: 1.2rem;
+
+        .inner {
+            margin: auto;
+            cursor: pointer;
+            color: #007aff;
+            font-weight: bold;
+            border-radius: 4px;
+            padding: 4px 16px;
+            transition: ease-out all .1s;
+            border: 2px solid #007aff;
+            font-size: 17px;
+
+            &:hover {
+                background: #007aff;
+                color: white;
+            }
+
+            &:active {
+                transform: scale(.95);
+            }
+        }
+    }
+
+    .change-instrument {
+        margin-top: 2rem;
+
+        .header p {
+            margin: auto;
+            font-size: 13px;
+            color: rgb(160, 160, 160);
+            font-weight: 600;
+            margin-bottom: 5px; 
+        }
+
+        .btn {
+            max-width: fit-content;
+            cursor: pointer;
+
+            &.active > .kfi {
+                filter: grayscale(0);
+            }
+
+            &:active > .kfi{
+                transform: scale(.90);
+            }
+        }
+
+        .kfi {
+            display: block;
+            margin: auto;
+            filter: grayscale(1);
+            width: 40px;
+            height: 40px;
+            margin: 0 5px;
+            transition: ease all .2s;
+
+            &:hover {
+                filter: grayscale(0);
+            }
+        }
+
+    }
+}

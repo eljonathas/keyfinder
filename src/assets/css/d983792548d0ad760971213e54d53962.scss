@@ -1,0 +1,41 @@
+.kfi {
+    display: inline-block;
+    width: 22px;
+    height: 25px;
+    vertical-align: bottom;
+
+    &.kfi-trash {
+        background: url('../img/icons/trash.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &.kfi-yt {
+        background: url('../img/icons/youtube.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &.kfi-speaker {
+        background: url('../img/icons/speaker.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &.kfi-keyboard {
+        background: url('../img/icons/keyboard.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &.kfi-wink {
+        background: url('../img/icons/wink.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
