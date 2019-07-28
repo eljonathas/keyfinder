@@ -1,2 +1,2 @@
-## For new, nothing here.
+## For now, nothing here.
 The project is in development
