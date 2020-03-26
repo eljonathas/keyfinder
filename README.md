@@ -9,7 +9,6 @@ Keyfinder is available in two modes:
          - Need a connection with _master database_ to compare data. Set this up in the next steps:
          - Generate the API Token (use `node generate_token` on master to generate a permanent database access key and replace this on `config.json`)
          - Don't forgot to send the _generated token_ on the future requests headers (you can use (axios)[https://github.com/axios/axios] to send data for API)
-         
    2. Complete app
       - **Includes**:
          - Full application template
